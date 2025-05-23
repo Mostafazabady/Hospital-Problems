@@ -1,0 +1,324 @@
+<!-- <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة الموظف</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom left, #e0f7fa, #f1f8e9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+      font-size: 24px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #43a047;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2e7d32;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ارسال مشكلة</h2>
+    <input type="text" id="name" placeholder="ادخل اسمك" />
+    <input type="text" id="departement" placeholder="القسم الذي تخدم فيه" />
+    <input type="number" id="militaryNum" placeholder="الرقم العسكري" />
+    <textarea id="message" placeholder="اكتب مشكلتك هنا"></textarea>
+    <button onclick="sendMessage()">ارسال</button>
+  </div>
+
+  <script>
+    const BIN_ID = "683058b08561e97a501a7c84";
+    const API_KEY = "$2a$10$XyjpAsGIxR/qkb3dM51Bq.w5Aa1TKl7DfIcXHDUmQsNsO4uCjGJd6";
+
+    async function sendMessage() {
+      const name = document.getElementById("name").value.trim();
+      const departement = document.getElementById("departement").value.trim();
+      const militaryNum = document.getElementById("militaryNum").value.trim();
+      const msg = document.getElementById("message").value.trim();
+
+      if (!militaryNum || !msg || !name || !departement) {
+        return alert("من فضلك أدخل جميع البيانات");
+      }
+
+      const res = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+        headers: { "X-Master-Key": API_KEY }
+      });
+      const data = await res.json();
+      const messages = data.record.messages;
+
+      messages.push({ name, departement, militaryNum, msg, time: new Date().toISOString() });
+
+      await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Master-Key": API_KEY
+        },
+        body: JSON.stringify({ messages })
+      });
+
+      alert("تم ارسال المشكلة بنجاح");
+      document.getElementById("message").value = "";
+    }
+  </script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة الموظف</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom left, #e0f7fa, #f1f8e9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+      font-size: 24px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #43a047;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #2e7d32;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>ارسال مشكلة</h2>
+    <input type="text" id="name" placeholder="ادخل اسمك" />
+    <input type="text" id="departement" placeholder="القسم الذي تخدم فيه" />
+    <input type="text" id="militaryNum" placeholder="الرقم العسكري" />
+    <textarea id="message" placeholder="اكتب مشكلتك هنا"></textarea>
+    <button onclick="sendMessage()">ارسال</button>
+  </div>
+
+  <script>
+    const API_URL = "https://683076cdf504aa3c70f807eb.mockapi.io/messages";
+
+    async function sendMessage() {
+      const name = document.getElementById("name").value.trim();
+      const departement = document.getElementById("departement").value.trim();
+      const militaryNum = document.getElementById("militaryNum").value.trim();
+      const msg = document.getElementById("message").value.trim();
+
+      if (!name || !departement || !militaryNum || !msg) {
+        return alert("من فضلك أدخل جميع البيانات");
+      }
+
+      const messageObj = {
+        name,
+        departement,
+        militaryNum,
+        msg,
+        time: new Date().toISOString()
+      };
+
+      try {
+        await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(messageObj)
+        });
+
+        alert("تم ارسال المشكلة بنجاح");
+        document.getElementById("message").value = "";
+      } catch (error) {
+        alert("حدث خطأ أثناء الإرسال");
+        console.error(error);
+      }
+    }
+  </script>
+</body>
+</html>
