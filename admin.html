@@ -318,10 +318,10 @@
         div.className = "msg";
         div.innerHTML = `
           <button onclick="deleteMessage('${m.id}')">🗑 حذف</button>
-          <strong> اسم الموظف :</strong> ${m.name}<br>
-          <strong>الرقم العسكري :</strong> ${m.militaryNum}<br>
-          <strong>القسم :</strong> ${m.departement}<br>
-          <strong>الرسالة :</strong> ${m.msg}<br>
+          <strong> اسم الموظف :</strong> ${m.name}<br><br>
+          <strong>الرقم العسكري :</strong> ${m.militaryNum}<br><br>
+          <strong>القسم :</strong> ${m.departement}<br><br>
+          <strong>الرسالة :</strong> ${m.msg}<br><br>
           <small>🕒 ${new Date(m.time).toLocaleString()}</small>
         `;
         container.appendChild(div);
